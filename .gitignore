@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+
+*.pt
+*.mp3
+
+runs/
+datasets/
+
+.ipynb_checkpoints/

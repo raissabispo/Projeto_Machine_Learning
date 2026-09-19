@@ -1,0 +1,10 @@
+path: /content/medical_mask_balanceado
+
+train: train/images
+val: valid/images
+test: test/images
+
+names:
+  0: mask_weared_incorrect
+  1: with_mask
+  2: without_mask

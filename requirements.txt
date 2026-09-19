@@ -1,0 +1,7 @@
+ultralytics
+opencv-python
+transformers
+sentencepiece
+torch
+edge-tts
+pygame

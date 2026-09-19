@@ -1,0 +1,29 @@
+RESULTADOS DO TESTE - MODELO FINAL
+
+Dataset de teste: 648 imagens
+Instâncias: 648
+
+Precisão (Precision): 99,4%
+Recall: 98,5%
+mAP50: 99,3%
+mAP50-95: 70,8%
+
+POR CLASSE
+
+mask_weared_incorrect
+Precisão: 99,0%
+Recall: 97,2%
+mAP50: 99,4%
+mAP50-95: 67,6%
+
+with_mask
+Precisão: 99,3%
+Recall: 98,6%
+mAP50: 98,9%
+mAP50-95: 74,8%
+
+without_mask
+Precisão: 99,9%
+Recall: 99,5%
+mAP50: 99,5%
+mAP50-95: 70,0%
