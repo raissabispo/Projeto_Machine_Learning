@@ -1,0 +1,29 @@
+{
+    "modelo": "YOLOv8n",
+    "tipo": "Detecção de objetos",
+    "aplicacao": "Detecção de máscaras",
+    "classes": [
+        "mask_weared_incorrect",
+        "with_mask",
+        "without_mask"
+    ],
+    "dataset": {
+        "total_imagens_balanceadas": 6489,
+        "treino": 5193,
+        "validacao": 648,
+        "teste": 648
+    },
+    "treinamento": {
+        "epocas": 30,
+        "imgsz": 640,
+        "batch": 16,
+        "GPU": true
+    },
+    "avaliacao": {
+        "precisao": 0.9849206724404315,
+        "recall": 0.9861111111111112,
+        "mAP50": 0.9914344598720533,
+        "mAP50_95": 0.6875199998983041,
+        "imagens_teste": 648
+    }
+}

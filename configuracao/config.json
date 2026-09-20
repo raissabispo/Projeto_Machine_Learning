@@ -1,0 +1,18 @@
+{
+    "modelo": "YOLOv8n",
+    "dataset": "Medical Mask Detection",
+    "classes": [
+        "mask_weared_incorrect",
+        "with_mask",
+        "without_mask"
+    ],
+    "epochs": 30,
+    "imgsz": 640,
+    "batch": 16,
+    "device": "GPU",
+    "divisao_dataset": {
+        "treino": 5193,
+        "validacao": 648,
+        "teste": 648
+    }
+}
