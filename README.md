@@ -1,121 +1,100 @@
-
+````markdown
 # Aplicação de Detecção de Objetos utilizando YOLO e Visão Computacional
 
-Aplicação de Visão Computacional para detecção automática de objetos em
-imagens, vídeos e webcam utilizando modelos YOLO.
+Aplicação de Visão Computacional para detecção automática de máscaras em imagens, vídeos e webcam utilizando YOLOv8n.
 
-O projeto apresenta dois cenários:
-
-- **Cenário 1:** detecção geral de objetos em tempo real utilizando um
-  modelo YOLO pré-treinado.
-- **Cenário 2:** detecção específica de máscaras utilizando um modelo
-  YOLO treinado para identificar diferentes condições de uso da máscara.
+O projeto utiliza um modelo YOLOv8n treinado especificamente para identificar diferentes condições de uso de máscaras faciais.
 
 ---
 
 ## 1. Objetivo
 
-Aplicar técnicas de Visão Computacional e Deep Learning para realizar
-detecção automática de objetos em diferentes tipos de entrada.
+Aplicar técnicas de Visão Computacional e Deep Learning para realizar a detecção automática de máscaras em diferentes tipos de entrada.
 
-O projeto também demonstra como um modelo YOLO pré-treinado pode ser
-adaptado para uma aplicação específica por meio de treinamento com um
-dataset direcionado.
+O projeto demonstra como um modelo YOLOv8n pré-treinado pode ser adaptado para uma aplicação específica por meio de treinamento com um dataset direcionado.
 
 ---
 
-## 2. Cenários do projeto
+## 2. Detecção de Máscaras
 
-### Cenário 1 — Detecção geral de objetos
-
-Utiliza um modelo YOLO pré-treinado para identificar diferentes objetos
-em tempo real por meio da webcam.
-
-A aplicação apresenta:
-
-- caixas delimitadoras;
-- nome do objeto;
-- confiança da detecção;
-- quantidade de objetos identificados;
-- FPS.
-
-O cenário está disponível em:
-
-```text
-webcam_deteccao_objetos/
-````
-
----
-
-### Cenário 2 — Detecção de máscaras
-
-Utiliza um modelo YOLOv8n treinado para um problema específico de
-detecção de máscaras.
+O projeto utiliza um modelo YOLOv8n treinado para um problema específico de detecção de máscaras.
 
 O modelo identifica três classes:
 
-| Classe                  | Interpretação                          |
-| ----------------------- | -------------------------------------- |
-| `with_mask`             | Pessoa com máscara                     |
-| `without_mask`          | Pessoa sem máscara                     |
+| Classe | Interpretação |
+| ------------------------- | -------------------------------------- |
+| `with_mask` | Pessoa com máscara |
+| `without_mask` | Pessoa sem máscara |
 | `mask_weared_incorrect` | Pessoa usando a máscara incorretamente |
 
-O cenário permite utilizar:
+A aplicação permite utilizar:
 
-* imagens;
-* vídeos;
-* webcam.
+- imagens;
+- vídeos;
+- webcam.
 
-Durante o uso da webcam, o sistema também fornece feedback por voz
-em português.
+Durante o uso da webcam, o sistema também fornece feedback por voz em português.
 
 As frases utilizadas são:
 
-* **"Pessoa com máscara."**
-* **"Pessoa sem máscara."**
-* **"Pessoa usando a máscara incorretamente."**
+- **"Pessoa com máscara."**
+- **"Pessoa sem máscara."**
+- **"Pessoa usando a máscara incorretamente."**
 
 ---
 
-## 3. Contexto de aplicação
+## 3. Cores das Detecções
 
-A detecção de máscaras pode ser utilizada como ferramenta de apoio ao
-monitoramento do uso de proteção facial em ambientes onde esse
-equipamento é relevante.
+Cada classe possui uma cor específica para facilitar a interpretação visual dos resultados:
+
+| Classe | Cor |
+| ------------------------- | -------- |
+| `with_mask` | 🔵 Azul |
+| `mask_weared_incorrect` | 🟡 Amarelo |
+| `without_mask` | 🔴 Vermelho |
+
+As cores são aplicadas às caixas delimitadoras e aos textos exibidos sobre os objetos detectados.
+
+---
+
+## 4. Contexto de Aplicação
+
+A detecção de máscaras pode ser utilizada como uma ferramenta de apoio ao monitoramento do uso de proteção facial em ambientes onde esse tipo de equipamento é relevante.
 
 Exemplos:
 
-* hospitais e clínicas;
-* laboratórios;
-* ambientes industriais;
-* construção;
-* cozinhas profissionais;
-* outros ambientes que utilizem máscaras como proteção.
+- hospitais e clínicas;
+- laboratórios;
+- ambientes industriais;
+- construção;
+- cozinhas profissionais;
+- outros ambientes que utilizem máscaras como proteção.
 
 ---
 
-## 4. Tecnologias utilizadas
+## 5. Tecnologias Utilizadas
 
-* Python
-* YOLOv8n
-* Ultralytics
-* PyTorch
-* OpenCV
-* Edge TTS
-* Pygame
+- Python
+- YOLOv8n
+- Ultralytics
+- PyTorch
+- OpenCV
+- Streamlit
+- Streamlit-WebRTC
+- Edge TTS
+- Pygame
 
 ---
 
-## 5. Dataset
+## 6. Dataset
 
-Para o cenário de detecção de máscaras foi utilizado o dataset
-**Medical Mask Detection**, contendo três classes:
+Para o projeto foi utilizado o dataset **Medical Mask Detection**, contendo três classes:
 
 ```text
 mask_weared_incorrect
 with_mask
 without_mask
-```
+````
 
 O conjunto utilizado no treinamento foi organizado em:
 
@@ -127,7 +106,7 @@ O conjunto utilizado no treinamento foi organizado em:
 
 ---
 
-## 6. Treinamento
+## 7. Treinamento
 
 O modelo utilizado para a detecção de máscaras foi o **YOLOv8n**.
 
@@ -141,12 +120,11 @@ Principais parâmetros utilizados:
 | Batch               |       16 |
 | GPU                 | Tesla T4 |
 
-O treinamento foi realizado utilizando um conjunto de dados balanceado
-entre as três classes.
+O treinamento foi realizado utilizando um conjunto de dados balanceado entre as três classes.
 
 ---
 
-## 7. Resultados
+## 8. Resultados
 
 ### Resultado no conjunto de teste
 
@@ -165,42 +143,57 @@ entre as três classes.
 | `with_mask`             |    99,3% |  98,6% |  98,9% |     74,8% |
 | `without_mask`          |    99,9% |  99,5% |  99,5% |     70,0% |
 
-Os resultados representam a avaliação realizada no conjunto de teste
-utilizado no projeto.
+Os resultados representam a avaliação realizada no conjunto de teste utilizado no projeto.
 
 ---
 
-## 8. Arquitetura
+## 9. Arquitetura
 
 ```text
-                         APLICAÇÃO
-                             |
-              +--------------+--------------+
-              |                             |
-              v                             v
-       CENÁRIO 1                      CENÁRIO 2
-   Objetos gerais                      Máscaras
-              |                             |
-              v                             v
-          Webcam                  Imagem / Vídeo / Webcam
-              |                             |
-              v                             v
-          YOLOv8n                     YOLOv8n
-       Pré-treinado                 Treinado para máscaras
-              |                             |
-              v                             v
-     Objetos detectados             Máscaras detectadas
-                                            |
-                                            v
-                                      Feedback por voz
+┌─────────────────┐
+│     ENTRADA     │
+│ Imagem / Vídeo  │
+│ / Webcam        │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│    BACKBONE     │
+│ Extrai          │
+│ características │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│      NECK       │
+│ Combina         │
+│ características │
+│ de diferentes   │
+│ níveis          │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│      HEAD       │
+│ Faz a detecção  │
+│ e classificação │
+└────────┬────────┘
+         ↓
+┌─────────────────┐
+│      SAÍDA      │
+│ Classe + caixa  │
+│ + confiança     │
+└─────────────────┘
 ```
+
+A mesma arquitetura YOLOv8n é utilizada para imagens, vídeos e webcam. O que muda é apenas a origem da entrada.
+
+No modelo utilizado, o Backbone é formado pelas camadas iniciais de extração de características, o Neck realiza a combinação de características de diferentes níveis e o Head realiza a detecção final.
 
 ---
 
-## 9. Estrutura do projeto
+## 10. Estrutura do Projeto
 
 ```text
 aplicacao-visao-computacional-yolo/
+
 │
 ├── artifacts_yolo/
 │
@@ -218,24 +211,21 @@ aplicacao-visao-computacional-yolo/
 │   ├── treinamento.py
 │   ├── teste_imagem.py
 │   ├── teste_video.py
-│   └── teste_tempo_real.py
+│   ├── teste_tempo_real.py
+│   └── teste_stremlit.py
 │
 ├── testes/
 │   ├── imagens_teste/
 │   └── videos_teste/
 │
-├── webcam_deteccao_objetos/
-│
 ├── .gitignore
 ├── README.md
-├── requirements.txt
-├── yolo11n.pt
-└── yolov8n.pt
+└── requirements.txt
 ```
 
 ---
 
-## 10. Principais diretórios
+## 11. Principais Diretórios
 
 ### `modelo/`
 
@@ -255,7 +245,17 @@ data.yaml
 
 ### `src/`
 
-Contém os códigos principais de treinamento e utilização do modelo.
+Contém os códigos principais de treinamento, testes e aplicação em tempo real.
+
+Os principais arquivos são:
+
+```text
+treinamento.py
+teste_imagem.py
+teste_video.py
+teste_tempo_real.py
+teste_streamlit.py
+```
 
 ### `testes/`
 
@@ -263,6 +263,7 @@ Contém as entradas utilizadas nas avaliações práticas:
 
 ```text
 testes/
+
 ├── imagens_teste/
 └── videos_teste/
 ```
@@ -273,24 +274,18 @@ Contém os resultados gerados pela aplicação:
 
 ```text
 resultados/
+
 ├── imagens/
 └── resultados_video/
 ```
 
 ### `artifacts_yolo/`
 
-Contém artefatos relacionados ao treinamento e aos resultados do
-experimento.
-
-### `webcam_deteccao_objetos/`
-
-Contém a aplicação referente ao cenário de detecção geral de objetos.
+Contém artefatos relacionados ao treinamento e aos resultados do experimento.
 
 ---
 
-## 11. Execução
-
-### Instalação
+## 12. Instalação
 
 Clone o repositório:
 
@@ -324,7 +319,7 @@ pip install -r requirements.txt
 
 ---
 
-## 12. Executar os programas
+## 13. Execução
 
 ### Detecção em imagens
 
@@ -344,20 +339,64 @@ python src/teste_video.py
 python src/teste_tempo_real.py
 ```
 
-### Detecção geral de objetos
+### Aplicação Streamlit
 
-A aplicação do cenário de detecção geral está disponível em:
+A aplicação em tempo real utilizando webcam pode ser executada com:
+
+```bash
+streamlit run src/teste_stremlit.py
+```
+
+Após executar o comando, abra no navegador o endereço apresentado pelo Streamlit, normalmente:
 
 ```text
-webcam_deteccao_objetos/
+http://localhost:8501
 ```
 
 ---
 
-## 13. Feedback por voz
+## 14. Aplicação Streamlit
 
-No cenário de detecção de máscaras, o sistema possui síntese de voz
-em português.
+A aplicação Streamlit permite realizar a detecção de máscaras utilizando a webcam.
+
+O fluxo da aplicação é:
+
+```text
+Webcam
+   ↓
+Streamlit-WebRTC
+   ↓
+Frame
+   ↓
+YOLOv8n
+   ↓
+Detecção
+   ↓
+Classe + Confiança
+   ↓
+Caixa colorida
+   ↓
+Exibição em tempo real
+```
+
+A interface apresenta:
+
+* detecção pela webcam;
+* caixas delimitadoras;
+* classe detectada;
+* confiança;
+* quantidade de detecções;
+* FPS;
+* identificação por cores;
+* feedback por voz.
+
+A aplicação utiliza `streamlit-webrtc` para receber e processar os frames da webcam em tempo real.
+
+---
+
+## 15. Feedback por Voz
+
+O sistema possui síntese de voz em português utilizando **Edge TTS** e reprodução do áudio com **Pygame**.
 
 As mensagens são:
 
@@ -369,16 +408,37 @@ Pessoa sem máscara.
 Pessoa usando a máscara incorretamente.
 ```
 
-A aplicação utiliza uma etapa de estabilização das detecções para
-reduzir mudanças momentâneas de classe entre frames.
+A aplicação utiliza uma etapa de estabilização das detecções para reduzir mudanças momentâneas de classe entre os frames.
+
+O sistema considera os últimos 8 estados detectados e utiliza uma quantidade mínima de 6 ocorrências para definir um estado como estável.
+
+A voz é acionada quando ocorre uma mudança de estado estável.
 
 ---
 
-## 14. Limitações
+## 16. Estabilização das Detecções
 
-Apesar dos resultados obtidos no conjunto de teste, o comportamento
-do modelo pode variar em situações diferentes das encontradas no
-dataset.
+Para reduzir oscilações entre diferentes classes durante a detecção em tempo real, o sistema mantém um histórico dos últimos 8 estados.
+
+```text
+Últimos 8 frames
+       ↓
+Contagem das classes
+       ↓
+Classe mais frequente
+       ↓
+Mínimo de 6 ocorrências
+       ↓
+Estado estável
+```
+
+Essa estratégia evita que uma pequena variação entre frames gere uma nova mensagem de voz a cada momento.
+
+---
+
+## 17. Limitações
+
+Apesar dos resultados obtidos no conjunto de teste, o comportamento do modelo pode variar em situações diferentes das encontradas no dataset.
 
 Entre as principais limitações estão:
 
@@ -391,23 +451,25 @@ Entre as principais limitações estão:
 * falsos positivos;
 * falsos negativos.
 
-Os resultados obtidos no conjunto de teste não representam
-necessariamente o mesmo desempenho em todos os ambientes reais.
+Durante os testes em tempo real, também podem ocorrer falsos positivos em situações visualmente semelhantes às máscaras.
+
+Os resultados obtidos no conjunto de teste não representam necessariamente o mesmo desempenho em todos os ambientes reais.
 
 ---
 
-## 15. Considerações finais
+## 18. Considerações Finais
 
-O projeto demonstra a utilização de YOLO em dois cenários distintos:
+O projeto demonstra a utilização do YOLOv8n em uma aplicação específica de Visão Computacional: a detecção automática de máscaras.
 
-1. detecção geral de objetos utilizando um modelo pré-treinado;
-2. detecção específica de máscaras utilizando um modelo treinado para
-   um problema direcionado.
+O modelo identifica três condições diferentes:
 
-A aplicação integra detecção por Visão Computacional com imagens,
-vídeos e webcam, além de feedback por voz no cenário de máscaras.
+1. pessoa com máscara;
+2. pessoa sem máscara;
+3. pessoa usando a máscara incorretamente.
 
-O projeto foi desenvolvido como uma aplicação prática de técnicas de
-Machine Learning, Deep Learning e Visão Computacional.
+A aplicação integra detecção em imagens, vídeos e webcam, além de fornecer feedback por voz em português durante a detecção em tempo real.
 
-````
+O projeto também apresenta uma interface desenvolvida com Streamlit para facilitar a utilização do modelo por meio do navegador.
+
+O projeto foi desenvolvido como uma aplicação prática de técnicas de Machine Learning, Deep Learning e Visão Computacional.
+
