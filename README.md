@@ -1,4 +1,3 @@
-````markdown
 # Aplicação de Detecção de Objetos utilizando YOLO e Visão Computacional
 
 Aplicação de Visão Computacional para detecção automática de máscaras em imagens, vídeos e webcam utilizando YOLOv8n.
@@ -124,30 +123,8 @@ O treinamento foi realizado utilizando um conjunto de dados balanceado entre as 
 
 ---
 
-## 8. Resultados
 
-### Resultado no conjunto de teste
-
-| Métrica   | Resultado |
-| --------- | --------: |
-| Precisão  | **99,4%** |
-| Recall    | **98,5%** |
-| mAP@50    | **99,3%** |
-| mAP@50-95 | **70,8%** |
-
-### Resultado por classe
-
-| Classe                  | Precisão | Recall | mAP@50 | mAP@50-95 |
-| ----------------------- | -------: | -----: | -----: | --------: |
-| `mask_weared_incorrect` |    99,0% |  97,2% |  99,4% |     67,6% |
-| `with_mask`             |    99,3% |  98,6% |  98,9% |     74,8% |
-| `without_mask`          |    99,9% |  99,5% |  99,5% |     70,0% |
-
-Os resultados representam a avaliação realizada no conjunto de teste utilizado no projeto.
-
----
-
-## 9. Arquitetura
+## 8. Arquitetura
 
 ```text
 ┌─────────────────┐
@@ -189,7 +166,7 @@ No modelo utilizado, o Backbone é formado pelas camadas iniciais de extração 
 
 ---
 
-## 10. Estrutura do Projeto
+## 9. Estrutura do Projeto
 
 ```text
 aplicacao-visao-computacional-yolo/
@@ -225,7 +202,7 @@ aplicacao-visao-computacional-yolo/
 
 ---
 
-## 11. Principais Diretórios
+## 10. Principais Diretórios
 
 ### `modelo/`
 
@@ -285,7 +262,7 @@ Contém artefatos relacionados ao treinamento e aos resultados do experimento.
 
 ---
 
-## 12. Instalação
+## 11. Instalação
 
 Clone o repositório:
 
@@ -319,7 +296,7 @@ pip install -r requirements.txt
 
 ---
 
-## 13. Execução
+## 12. Execução
 
 ### Detecção em imagens
 
@@ -355,7 +332,7 @@ http://localhost:8501
 
 ---
 
-## 14. Aplicação Streamlit
+## 13. Aplicação Streamlit
 
 A aplicação Streamlit permite realizar a detecção de máscaras utilizando a webcam.
 
@@ -394,7 +371,7 @@ A aplicação utiliza `streamlit-webrtc` para receber e processar os frames da w
 
 ---
 
-## 15. Feedback por Voz
+## 14. Feedback por Voz
 
 O sistema possui síntese de voz em português utilizando **Edge TTS** e reprodução do áudio com **Pygame**.
 
@@ -416,7 +393,7 @@ A voz é acionada quando ocorre uma mudança de estado estável.
 
 ---
 
-## 16. Estabilização das Detecções
+## 15. Estabilização das Detecções
 
 Para reduzir oscilações entre diferentes classes durante a detecção em tempo real, o sistema mantém um histórico dos últimos 8 estados.
 
@@ -436,7 +413,7 @@ Essa estratégia evita que uma pequena variação entre frames gere uma nova men
 
 ---
 
-## 17. Limitações
+## 16. Limitações
 
 Apesar dos resultados obtidos no conjunto de teste, o comportamento do modelo pode variar em situações diferentes das encontradas no dataset.
 
@@ -457,7 +434,7 @@ Os resultados obtidos no conjunto de teste não representam necessariamente o me
 
 ---
 
-## 18. Considerações Finais
+## 17. Considerações Finais
 
 O projeto demonstra a utilização do YOLOv8n em uma aplicação específica de Visão Computacional: a detecção automática de máscaras.
 
