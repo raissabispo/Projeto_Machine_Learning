@@ -2,10 +2,12 @@
 __pycache__/
 *.pyc
 
-*.pt
 *.mp3
 
 runs/
 datasets/
 
 .ipynb_checkpoints/
+
+# Ignorar somente este modelo
+yolov8n.pt

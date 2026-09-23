@@ -450,3 +450,16 @@ O projeto também apresenta uma interface desenvolvida com Streamlit para facili
 
 O projeto foi desenvolvido como uma aplicação prática de técnicas de Machine Learning, Deep Learning e Visão Computacional.
 
+## Licença e Dataset
+
+Este projeto utiliza o dataset **Medical Mask Detection**,
+disponibilizado sob a licença **CC BY 4.0**.
+
+Dataset:
+https://universe.roboflow.com/ai-workspace-yolo-ghcsl/medical-mask-detection/dataset/4
+
+A utilização do dataset segue os termos da licença Creative Commons
+Attribution 4.0 International (CC BY 4.0), com atribuição à fonte original.
+
+Licença:
+https://creativecommons.org/licenses/by/4.0/
