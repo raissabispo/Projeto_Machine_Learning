@@ -267,13 +267,13 @@ Contém artefatos relacionados ao treinamento e aos resultados do experimento.
 Clone o repositório:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/raissabispo/Projeto_YOLO_Machine_Learning.git
 ```
 
 Entre na pasta:
 
 ```bash
-cd aplicacao-visao-computacional-yolo
+cd Projeto_YOLO_Machine_Learning
 ```
 
 Crie o ambiente virtual:
