@@ -273,7 +273,7 @@ git clone <URL_DO_REPOSITORIO>
 Entre na pasta:
 
 ```bash
-cd aplicacao-visao-computacional-yolo
+cd Projeto_YOLO_Machine_Learning
 ```
 
 Crie o ambiente virtual:
