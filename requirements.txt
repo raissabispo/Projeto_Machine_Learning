@@ -1,16 +1,7 @@
-# ultralytics
-# opencv-python
-# transformers
-# sentencepiece
-# torch
-# edge-tts
-# pygame
-
-#deploy no streamlit
-
 ultralytics
-opencv-python-headless
-streamlit
-streamlit-webrtc
-av
+opencv-python
+transformers
+sentencepiece
+torch
 edge-tts
+pygame

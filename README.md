@@ -189,7 +189,7 @@ aplicacao-visao-computacional-yolo/
 │   ├── teste_imagem.py
 │   ├── teste_video.py
 │   ├── teste_tempo_real.py
-│   └── teste_stremlit.py
+│   └── teste_streamlit.py
 │
 ├── testes/
 │   ├── imagens_teste/
@@ -321,7 +321,7 @@ python src/teste_tempo_real.py
 A aplicação em tempo real utilizando webcam pode ser executada com:
 
 ```bash
-streamlit run src/teste_stremlit.py
+streamlit run src/teste_streamlit.py
 ```
 
 Após executar o comando, abra no navegador o endereço apresentado pelo Streamlit, normalmente:
